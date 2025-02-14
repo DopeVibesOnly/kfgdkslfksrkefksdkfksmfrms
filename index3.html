@@ -1,0 +1,87 @@
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Опрос - Сайт Ляси</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="quiz.css">
+  <link href="https://fonts.googleapis.com/css2?family=Marck+Script&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+  <svg width="0" height="0">
+    <defs>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+        <feMerge>
+          <feMergeNode in="coloredBlur"/>
+          <feMergeNode in="SourceGraphic"/>
+        </feMerge>
+      </filter>
+    </defs>
+  </svg>
+  
+  <header>
+    <div class="sparkles"></div>
+    <div class="logo">
+      <svg class="heart-logo" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#ff69b4" />
+            <stop offset="100%" style="stop-color:#ff1493" />
+          </linearGradient>
+        </defs>
+        <path d="M50 85.5c-35-25-45-45-45-60 0-15 12-20 22-20s23 5 23 20c0-15 13-20 23-20s22 5 22 20c0 15-10 35-45 60z"/>
+        <text x="50" y="50" text-anchor="middle" dy=".3em">Л</text>
+      </svg>
+      <div class="logo-rings"></div>
+    </div>
+    <nav>
+      <h1>Сайт Ляси<span class="heart-sparkle">♥</span></h1>
+      <ul class="nav-links">
+        <li><a href="index2.html">✿ 30 Причин ✿</a></li>
+        <li><a href="index3.html">✿ Опрос ✿</a></li>
+        <li><a href="index4.html">✿ Предсказания ✿</a></li>
+      </ul>
+      <div class="floating-hearts">
+        <svg class="floating-heart" viewBox="0 0 100 100">
+          <path d="M50 85.5c-35-25-45-45-45-60 0-15 12-20 22-20s23 5 23 20c0-15 13-20 23-20s22 5 22 20c0 15-10 35-45 60z"/>
+        </svg>
+        <svg class="floating-heart" viewBox="0 0 100 100">
+          <path d="M50 85.5c-35-25-45-45-45-60 0-15 12-20 22-20s23 5 23 20c0-15 13-20 23-20s22 5 22 20c0 15-10 35-45 60z"/>
+        </svg>
+        <svg class="floating-heart" viewBox="0 0 100 100">
+          <path d="M50 85.5c-35-25-45-45-45-60 0-15 12-20 22-20s23 5 23 20c0-15 13-20 23-20s22 5 22 20c0 15-10 35-45 60z"/>
+        </svg>
+      </div>
+    </nav>
+  </header>
+  
+  <main>
+    <div class="content quiz-content">
+      <h2>Опрос</h2>
+      <div class="quiz-container">
+        <div class="quiz-progress">
+          <div class="progress-hearts">
+            <div class="progress-heart" data-question="1">1</div>
+            <div class="progress-heart" data-question="2">2</div>
+            <div class="progress-heart" data-question="3">3</div>
+            <div class="progress-heart" data-question="4">4</div>
+            <div class="progress-heart" data-question="5">5</div>
+          </div>
+          <div class="progress-line"></div>
+        </div>
+        
+        <div class="question-container">
+          <div class="question">
+            <h3></h3>
+            <div class="options"></div>
+          </div>
+          <div class="feedback"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <script src="quiz.js"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+.reasons-content {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 4rem !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.reasons-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 20%, rgba(255,182,193,0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255,105,180,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.reasons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  padding: 2rem 0;
+}
+
+.reason {
+  position: relative;
+  background: linear-gradient(135deg, rgba(255, 240, 245, 0.95), rgba(255, 255, 255, 0.95));
+  padding: 2.5rem;
+  border-radius: 25px;
+  box-shadow: 
+    0 10px 25px rgba(255, 105, 180, 0.15),
+    inset 0 0 30px rgba(255, 192, 203, 0.1);
+  border: 3px solid rgba(255, 182, 193, 0.3);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.reason::before {
+  content: '♥';
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: var(--primary-color);
+  opacity: 0.3;
+  font-size: 1.2rem;
+  transition: all 0.5s ease;
+}
+
+.reason::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(255,182,193,0.1) 0%,
+    transparent 50%,
+    rgba(255,105,180,0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.reason:hover {
+  transform: translateY(-8px) scale(1.02) rotate(1deg);
+  box-shadow: 
+    0 15px 35px rgba(255, 105, 180, 0.25),
+    inset 0 0 40px rgba(255, 192, 203, 0.2);
+  border-color: var(--primary-color);
+}
+
+.reason:hover::before {
+  opacity: 1;
+  transform: rotate(360deg) scale(1.2);
+  color: var(--accent-color);
+}
+
+.reason:hover::after {
+  opacity: 1;
+}
+
+.reason-number {
+  position: absolute;
+  top: -1.2rem;
+  left: -1.2rem;
+  background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+  color: white;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Marck Script', cursive;
+  font-size: 1.4rem;
+  box-shadow: 
+    0 5px 15px rgba(255, 105, 180, 0.3),
+    inset 0 0 10px rgba(255, 255, 255, 0.5);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  z-index: 1;
+  transform: translateZ(20px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reason:hover .reason-number {
+  transform: translateZ(30px) scale(1.1) rotate(5deg);
+  box-shadow: 
+    0 8px 20px rgba(255, 105, 180, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.6);
+}
+
+.reason p {
+  color: var(--text-color);
+  margin: 0;
+  padding: 0.5rem 0;
+  text-align: center;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  transition: all 0.4s ease;
+  position: relative;
+  transform: translateZ(10px);
+}
+
+.reason:hover p {
+  color: var(--accent-color);
+  transform: translateZ(15px);
+  letter-spacing: 0.5px;
+}
+
+.floating-hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.floating-hearts-container .floating-heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-color);
+  opacity: 0.3;
+  animation: floatUpHeart 8s linear infinite;
+  filter: drop-shadow(0 0 5px rgba(255,105,180,0.3));
+}
+
+@keyframes floatUpHeart {
+  0% {
+    transform: translateY(100vh) rotate(0deg) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-100px) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .reasons-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .reason {
+    padding: 2rem;
+  }
+}
+
+@keyframes sparkleEffect {
+  0%, 100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
